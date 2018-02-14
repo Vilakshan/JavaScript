@@ -104,6 +104,18 @@ Undefined should be used to represent system-level, unexpected or error-like abs
 Null should be used to represent program-level, normal or expected absence of value.
 If programmer needs to ( intentionally ) assign one of these values to a variable or property or pass one of these values to a function, Null is the right choice.
 
+The Global Object
+
+When the JS interpreter starts (or whenever a web browser loads a new page), it creates a new global object and gives it an initial set of properties that define
+Global properties like undefined, Infinity and NaN
+Global functions like isNaN(), parseInt() and eval()
+Constructor functions like Date(), RegExp(), String(), Object() and Array()
+Global objects like Math and JSON
+
+In client side JavaScript, the Window object serves as the global object for all JS code contained in the browser window it represents.
+Global Window object has a self referential property window property that can be used instead of this to refer to the global object.
+The Window object defines the core global properties, but it also defines quite a few other globals that are specific to web browser and client side JS.
+The Global object also holds the program-defined globals.
 
 
 
