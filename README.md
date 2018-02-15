@@ -117,6 +117,37 @@ Global Window object has a self referential property window property that can be
 The Window object defines the core global properties, but it also defines quite a few other globals that are specific to web browser and client side JS.
 The Global object also holds the program-defined globals.
 
+Immutable Primitive Values and Mutable Object References
 
+Primitive values in JS are immutable: there is no way to change a primitive value.
+Primitive values are always compared by value.
+
+Objects are mutable: their values can be changed.
+
+var obj = {x:1};
+
+// Mutate the above object by changing its property’s value
+obj.x = 7;
+
+// Mutate it again by adding new property to it.
+obj.y = 21;
+
+Objects are compared by reference: two object values are same if and only if they refer to the same underlying object.
+Objects are also called ‘reference type’ in JS, distinguishing them from primitive JS values.
+
+var obj_1 = {a: 1};
+var obj_2 = obj1;
+
+//true, both obj_1 and obj_2, refer to same underlying object.
+obj_1 === obj_2		
+
+obj_3 = {a: 1};
+
+//false, both obj_1 and obj_3, refer to different underlying objects though their values are same
+obj_3 === obj_1;
+
+obj1.a = 8;
+obj2.a;		//8
+obj3.a		//1
 
 
