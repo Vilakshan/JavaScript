@@ -150,4 +150,129 @@ obj1.a = 8;
 obj2.a;		//8
 obj3.a		//1
 
+Type Conversions
+
+JS is very flexible about the types of values it requires.
+If JS expects a particular type of value, no matter what the supplied value is, JS will convert it to the type which is needed.
+
+
+
+VALUE
+Converted To:
+STRING
+NUMBER
+BOOLEAN
+OBJECT
+undefined
+“undefined”``
+NaN
+false
+Throws TypeError
+null
+“null”
+0
+false
+Throws TypeError
+true
+“true”
+1
+
+
+new Boolean(true)
+false
+“false
+0
+
+
+new Boolean(false)
+“” (empty string)
+
+
+0
+false
+new String(“”)
+“1.2” (numeric string)
+
+
+1.2
+true
+new String(“1.2”)
+“Hello” (non-numeric string)
+
+
+NaN
+true
+new String(“hello”)
+0
+“0”
+
+
+false
+New Number(0)
+-0
+“0”
+
+
+false
+New Number(-0)
+NaN
+“NaN”
+
+
+false
+New Number(NaN)
+Infinity
+“Infinity”
+
+
+true
+New Number(Infinity)
+-Infinity
+“-Infinity”
+
+
+true
+New Number(-Infinity)
+8
+(finite number, non-zero)
+“8”
+
+
+true
+New Number(8)
+{} (any object)
+
+
+
+
+true
+
+
+[] (empty array)
+“”
+0
+true
+
+
+[9] (1 numeric element)
+“9”
+9
+true
+
+
+[‘a] (any other element)
+
+
+NaN
+true
+
+
+function() {}
+(any function)
+
+
+NaN
+true
+
+
 
