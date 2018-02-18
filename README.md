@@ -291,3 +291,33 @@ function checkScope() {
 }
 checkScope();				// => “local”
 
+Function Scope and Hoisting
+
+In C like programming languages, each block of code within a pair of curly braces {} has its own scope, and variables declared within the scope are not visible outside the scope.
+This is called block scope 
+JS uses function scope.
+A variable declared inside a function is visible throughout the entire body of function including nested functions.
+
+Inside a function scope variables are even visible before they are declared. This feature of JS known as Hoisting.
+JS code behaves as if all variable declarations in a function (only declarations and not associated assignments) are “hoisted” to the top of the function.
+
+var scope = “Global”;
+function fun() {
+	console.log(scope);		// prints “undefined” and not “Global”
+	var scope = “Local”;		// variable initialized here, but defined everywhere inside the function body 
+	console.log(scope);		// prints “Local”
+}
+
+The above function is equivalent to the following function where the variable declaration is hoisted to the top and the initialization is left where it was.
+
+
+
+
+function fun() {
+	var scope;
+	console.log(scope);		// prints “undefined”
+	scope = “Local”;		// variable initialized
+	console.log(scope);		// prints “Local”
+}
+
+
