@@ -276,3 +276,18 @@ true
 
 
 
+
+Variable Scope
+
+The scope of a variable is the region of program source code in which it is defined.
+A global variable has the global scope: it is defined everywhere in the JS code.
+Variables defined within a function are defined only within the body of the function, and known as local variable of that function.
+If a Global variable and a local variable have the same name then inside the local scope, local variables hides the global variable.
+
+var c=scope = “global”;		// a global variable
+function checkScope() {
+	var scope = “local”;		// a local variable with same name as global
+	return scope;
+}
+checkScope();				// => “local”
+
